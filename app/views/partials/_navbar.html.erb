@@ -1,0 +1,32 @@
+<% navbar_topics = [
+  { title: "About", link: '#', subtitle: "About this site" },
+  { title: "Contact", link: '#', subtitle: "How to get ahold of the author" },
+  { title: "Topic One", link: '#', subtitle: "Information about topic one" },
+  { title: "Topic Two", link: '#', subtitle: "Info about topic two" },
+  { title: "Topic Three", link: '#', subtitle: "Some information about topic three" }
+] %>
+
+
+<div id="navbar">
+  <% navbar_topics.each do |i| %>
+    <%= link_to i[:link], data: {subtitle: i[:subtitle]}, class: "topic-selector" do %>
+      <%= i[:title] %>
+      <div></div>
+    <% end %>
+  <% end %>
+</div>
+
+<style>
+  .topic-selector {
+    width: <%= 100 / navbar_topics.length %>%;
+  }
+</style>
+
+<script>
+  $(".topic-selector").on("mouseenter", function() {
+    $("#banner-subtitle").text(this.dataset.subtitle);
+  });
+  $(".topic-selector").on("mouseleave", function() {
+    $("#banner-subtitle").text("Muh Subtitle");
+  });
+</script>

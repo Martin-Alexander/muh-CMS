@@ -1,0 +1,37 @@
+#navbar {
+  display: flex;
+  background-color: #bf3333;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  font-family: 'Helvetica';
+}
+
+.topic-selector {
+  position: relative;
+  color: #c60000;
+  margin: 0px 0.5px 1px 0.5px;
+  
+  height: 5vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: linear-gradient(135deg, #e8f1f9, #dbebf9);
+  &:first-child {
+    margin: 0px 0.5px 1px 0px;
+  } 
+  &:last-child {
+    margin: 0px 0px 1px 0.5px;
+  }
+  div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    background-color: black;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.1;
+    }
+  }
+}
