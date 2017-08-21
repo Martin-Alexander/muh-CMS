@@ -1,9 +1,9 @@
 <% navbar_topics = [
-  { title: "About", link: '/', subtitle: "About this site" },
-  { title: "Contact", link: '/', subtitle: "How to stalk me" },
-  { title: "Current Events", link: '/', subtitle: "My thoughts on the goings on in the world" },
-  { title: "Meta Politics", link: '/', subtitle: "Timeless insights into the nature of politics" },
-  { title: "Best Of", link: '?tags=test', subtitle: "Posts I'm particularly proud of" }
+  { title: "About", link: '/', subtitle: "About This Site" },
+  { title: "Contact", link: '/', subtitle: "How to Stalk Me" },
+  { title: "Current Events", link: '?tags=current-events', subtitle: "Shitposting About the News" },
+  { title: "Meta Politics", link: '?tags=meta-politics', subtitle: "Meta Politics" },
+  { title: "Best Of", link: '?tags=test', subtitle: "Best Of" }
 ] %>
 
 
@@ -25,10 +25,12 @@
 </style>
 
 <script>
-  $(".topic-selector").on("mouseenter", function() {
-    $("#banner-subtitle").text(this.dataset.subtitle);
-  });
-  $(".topic-selector").on("mouseleave", function() {
-    $("#banner-subtitle").text("Muh Subtitle");
+  $(document).ready(function() {
+    $(".topic-selector").on("mouseover", function() {
+      $("#banner-subtitle").text(this.dataset.subtitle);
+    });
+    $(".topic-selector").on("mouseleave", function() {
+      $("#banner-subtitle").text("Niggas Whomst Have Big Brains");
+    });
   });
 </script>

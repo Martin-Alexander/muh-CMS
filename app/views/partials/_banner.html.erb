@@ -1,21 +1,26 @@
 <%= link_to root_path, id: "banner-container" do %>
   <div id="banner-title">Big Brained Nibbas</div>
-  <div id="banner-subtitle">Niggas Whomst Have Big Brains</div>  
+  <div id="banner-subtitle">Niggas Whomst Have Big Brains</div>
 <% end %>
 
 <script>
 
   function resize() {
     var width = $(document).width();
-    if (width < 600) {
-      $("#banner-title").css({"font-size": "16vw"});
+    if (width < 1200) {
+      $("#banner-title").css({"font-size": "8vw"});
       $("#banner-subtitle").css({"font-size": "4vw"});
-      $(".topic-selector").css({"display": "none"});
     } else {
       $("#banner-title").css({"font-size": "7em"});
       $("#banner-subtitle").css({"font-size": "2em"});
+    }
+    if (width < 550) {
+      $(".topic-selector").css({"display": "none"});
+      $("#banner-container").css({"height": "25vw"});
+    } else {
       $(".topic-selector").css({"display": "flex"});
-    }    
+      $("#banner-container").css({"height": "25vh"});
+    }
   }
 
   $(document).ready(function() {
