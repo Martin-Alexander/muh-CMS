@@ -2,30 +2,32 @@
 <%= render 'partials/navbar' %>
 
 <div id="post-wrapper">
-  <div class="post-title">
-    <%= @post.title%>
-  </div>
+  <div class="box-spacing">
+    <div class="post-title" id="post-title">
+      <%= @post.title%>
+    </div>
 
-  <div class="post-tags">
-    <span>
-      <i class="fa fa-clock-o" aria-hidden="true"></i>
-      <span><%= @post.created_at.strftime("%B %d, %Y") %></span>
-    </span>
-    <% if @post.tags.length > 0 %>
+    <div class="post-tags" id="post-tags">
       <span>
-        <i class="fa fa-tags" aria-hidden="true"></i>
-        <% @post.tags.each_with_index do |tag, i| -%><%= ',' unless i == 0  -%>
-          <%= link_to tag.tag, '#', class: "tag" -%>
-        <%- end %>
+        <i class="fa fa-clock-o" aria-hidden="true"></i>
+        <span><%= @post.created_at.strftime("%B %d, %Y") %></span>
       </span>
-    <% end %>
-    <span>
-      <i class="fa fa-user" aria-hidden="true"></i>
-      <span><%# @post.author %>author</span>
-    </span>
-  </div>
+      <% if @post.tags.length > 0 %>
+        <span>
+          <i class="fa fa-tags" aria-hidden="true"></i>
+          <% @post.tags.each_with_index do |tag, i| -%><%= ',' unless i == 0  -%>
+            <%= link_to tag.tag, '#', class: "tag" -%>
+          <%- end %>
+        </span>
+      <% end %>
+      <span>
+        <i class="fa fa-user" aria-hidden="true"></i>
+        <span><%# @post.author %>author</span>
+      </span>
+    </div>
 
-  <div class="post-content">
-    <%= clean(Kramdown::Document.new(@post.content).to_html).html_safe %>
+    <div class="post-content">
+      <%= clean(Kramdown::Document.new(@post.content).to_html).html_safe %>
+    </div>
   </div>
 </div>

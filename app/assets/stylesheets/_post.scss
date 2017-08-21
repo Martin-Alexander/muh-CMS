@@ -26,6 +26,10 @@
   }
 }
 
+#post-title {
+  font-size: 40px;
+}
+
 .post-tags {
   font-size: 15px;
   opacity: 0.8;
@@ -33,6 +37,10 @@
   & > span {
     margin-right: 10px;
   }
+}
+
+#post-tags {
+  margin-bottom: 35px;
 }
 
 .tag {
@@ -48,4 +56,14 @@
   &:hover {
     text-decoration: underline;
   }
+}
+
+.center-image {
+  display: block;
+  margin: 0 auto;  
+}
+
+.float-image-left {
+  float: left;
+  margin-right: 20px;
 }

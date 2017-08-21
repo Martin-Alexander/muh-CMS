@@ -3,7 +3,7 @@
 
 <div id="post-wrapper">
   <% @posts.each do |post| %>
-    <div class="post-container box">
+    <div class="post-container box-color box-spacing">
 
       <div class="post-title">
         <%= link_to post.title, post_path(post.slug), class: "post-title" %>
