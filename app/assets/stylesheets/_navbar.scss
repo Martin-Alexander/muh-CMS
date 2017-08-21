@@ -1,6 +1,6 @@
 #navbar {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
-  font-family: 'Helvetica';
+  font-family: $main-font;
   background-color: $light-blue;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
   div {
@@ -13,7 +13,7 @@
 .topic-selector {
   // border-bottom: $navbar-border;
   position: relative;
-  color: #c60000;
+  color: $dark-color;
   font-size: 1em;
   height: 5vh;
   display: flex;
@@ -32,7 +32,7 @@
     opacity: 0;
     background-color: black;
     cursor: pointer;
-    transition: opacity 0.12s;
+    transition: opacity 0.25s;
     &:hover {
       opacity: 0.1;
     }

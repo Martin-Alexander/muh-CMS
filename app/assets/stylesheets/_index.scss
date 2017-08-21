@@ -1,0 +1,51 @@
+#post-wrapper {
+  max-width: $max-wrapper-width;
+  padding-top: 40px;
+  margin: 0 auto;
+}
+
+
+.post-container {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.post-title {
+  margin-bottom: 2px;
+  a {
+    font-family: $main-font;
+    font-size: 28px;
+    font-weight: bolder;
+    transition: color 0.12s;
+    &:hover {
+      color: $dark-color;
+    }
+  }
+}
+
+.post-tags {
+  font-size: 15px;
+  opacity: 0.8;
+  margin-bottom: 10px;
+  & > span {
+    margin-right: 10px;
+  }
+}
+
+.tag {
+  &:hover {
+    color: $dark-color;
+    text-decoration: underline;
+  }
+}
+
+.post-content {
+  read-more {
+    color: $hyperlink-color;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}

@@ -3,6 +3,18 @@ body {
 }
 
 a {
-  color: black;
+  color: $off-black;
   text-decoration: none;
+}
+
+h1 {
+  font-family: $main-font;
+  font-size: 25px;
+  font-weight: bolder;
+  margin: 0;
+}
+
+* {
+  font-family: $main-font;
+  color: $off-black;
 }
