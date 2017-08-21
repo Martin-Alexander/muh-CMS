@@ -8,12 +8,14 @@
 
 
 <div id="navbar">
-  <% navbar_topics.each do |i| %>
-    <%= link_to i[:link], data: {subtitle: i[:subtitle]}, class: "topic-selector" do %>
-      <%= i[:title] %>
-      <div></div>
+  <div>
+    <% navbar_topics.each do |i| %>
+      <%= link_to i[:link], data: {subtitle: i[:subtitle]}, class: "topic-selector" do %>
+        <%= i[:title] %>
+        <div></div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
 
 <style>

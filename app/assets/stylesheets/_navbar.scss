@@ -1,25 +1,27 @@
 #navbar {
-  display: flex;
-  background-color: #bf3333;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
   font-family: 'Helvetica';
+  background-color: $light-blue;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  div {
+    display: flex;
+    max-width: $max-wrapper-width;
+    margin: 0 auto;
+  }
 }
 
 .topic-selector {
+  // border-bottom: $navbar-border;
   position: relative;
   color: #c60000;
-  margin: 0px 0.5px 1px 0.5px;
   font-size: 1em;
   height: 5vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: linear-gradient(135deg, #e8f1f9, #dbebf9);
+  // border-right: $navbar-border;
   &:first-child {
-    margin: 0px 0.5px 1px 0px;
-  } 
-  &:last-child {
-    margin: 0px 0px 1px 0.5px;
+    // border-left: $navbar-border;
   }
   div {
     position: absolute;
@@ -30,6 +32,7 @@
     opacity: 0;
     background-color: black;
     cursor: pointer;
+    transition: opacity 0.12s;
     &:hover {
       opacity: 0.1;
     }
