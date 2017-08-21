@@ -6,7 +6,7 @@
     <div class="post-container box">
 
       <div class="post-title">
-        <%= link_to post.title, '#' %>
+        <%= link_to post.title, post_path(post.slug), class: "post-title" %>
       </div>
 
       <div class="post-tags">
@@ -14,12 +14,14 @@
           <i class="fa fa-clock-o" aria-hidden="true"></i>
           <span><%= post.created_at.strftime("%B %d, %Y") %></span>
         </span>
-        <span>
-          <i class="fa fa-tags" aria-hidden="true"></i>
-          <% post.tags.each_with_index do |tag, i| -%><%= ',' unless i == 0  -%>
-            <%= link_to tag.tag, '#', class: "tag" -%>
-          <%- end %>
-        </span>
+        <% if post.tags.length > 0 %>
+          <span>
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <% post.tags.each_with_index do |tag, i| -%><%= ',' unless i == 0  -%>
+              <%= link_to tag.tag, '#', class: "tag" -%>
+            <%- end %>
+          </span>
+        <% end %>
         <span>
           <i class="fa fa-user" aria-hidden="true"></i>
           <span><%# post.author %>author</span>
@@ -27,8 +29,7 @@
       </div>
 
       <div class="post-content">
-        <%= Kramdown::Document.new(post.content).to_html.html_safe %>
-        <read-more>Read more...</read-more>
+        <%= read_more(Kramdown::Document.new(post.content).to_html.html_safe, post, class: "read-more").html_safe %>
       </div>
     </div>
   <% end %>

@@ -1,2 +1,31 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<%= render 'partials/banner' %>
+<%= render 'partials/navbar' %>
+
+<div id="post-wrapper">
+  <div class="post-title">
+    <%= @post.title%>
+  </div>
+
+  <div class="post-tags">
+    <span>
+      <i class="fa fa-clock-o" aria-hidden="true"></i>
+      <span><%= @post.created_at.strftime("%B %d, %Y") %></span>
+    </span>
+    <% if @post.tags.length > 0 %>
+      <span>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+        <% @post.tags.each_with_index do |tag, i| -%><%= ',' unless i == 0  -%>
+          <%= link_to tag.tag, '#', class: "tag" -%>
+        <%- end %>
+      </span>
+    <% end %>
+    <span>
+      <i class="fa fa-user" aria-hidden="true"></i>
+      <span><%# @post.author %>author</span>
+    </span>
+  </div>
+
+  <div class="post-content">
+    <%= clean(Kramdown::Document.new(@post.content).to_html).html_safe %>
+  </div>
+</div>

@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   devise_for :users
 
   root to: 'posts#index'
-  resources :posts, only: [:index, :show]
+  get '/:post_slug', to: 'posts#show', as: 'post'
+
 end
