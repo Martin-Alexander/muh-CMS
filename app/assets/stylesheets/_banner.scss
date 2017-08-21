@@ -1,0 +1,23 @@
+#banner-container {
+  height: 25vh;
+  background: linear-gradient(150deg, $main-blue-light, $main-blue-light 20%, $main-blue-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  div {
+    color: $title-font-color;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+    font-family: $title-font;
+  }
+}
+
+#banner-title {
+  font-size: 7vw;
+}
+
+#banner-subtitle {
+  font-size: 2vw;
+  opacity: 0.85;
+  padding-bottom: 10px;
+}
